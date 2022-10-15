@@ -18,6 +18,7 @@ html {
 
 .App {
   background-color: gray;
+  min-width: 700px;
 }
 
 .boardButton {

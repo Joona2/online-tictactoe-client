@@ -89,7 +89,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="titleTicTacToe">TicTacToe</header>
+      <div className="titleDiv">
+        <header className="titleTicTacToe">TicTacToe</header>
+      </div>
       <div className="matchmaking">
         <button className="matchmakingButton" onClick={joinRoom}>
           {" "}
