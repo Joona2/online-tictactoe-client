@@ -4,7 +4,9 @@ import { useEffect, useState, useRef } from "react";
 
 function App() {
   const socket = useRef(
-    io.connect("https://tictactoe-online-server.herokuapp.com/")
+    io.connect("https://tictactoe-online-server.herokuapp.com/", {
+      withCredentials: true,
+    })
   );
   const [queueStarted, setQueueStarted] = useState(false);
   const [gameOverWin, setGameOverWin] = useState(false);
