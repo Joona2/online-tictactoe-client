@@ -1,10 +1,11 @@
 import GameBoard from "./components/GameBoard";
 import io from "socket.io-client";
-import { useEffect, useState } from "react";
-
-const socket = io.connect("https://tictactoe-online-server.herokuapp.com/");
+import { useEffect, useState, useRef } from "react";
 
 function App() {
+  const socket = useRef(
+    io.connect("https://tictactoe-online-server.herokuapp.com/")
+  );
   const [queueStarted, setQueueStarted] = useState(false);
   const [gameOverWin, setGameOverWin] = useState(false);
   const [gameOverLoss, setGameOverLoss] = useState(false);
