@@ -1,13 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import GameBoard from "./components/GameBoard";
 import io from "socket.io-client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+
+const socket = io.connect("https://tictactoe-online-server.herokuapp.com/", {
+  withCredentials: true,
+  transports: ["websocket"],
+});
 
 function App() {
-  const socket = useRef(
-    io.connect("https://tictactoe-online-server.herokuapp.com/", {
-      withCredentials: true,
-    })
-  );
   const [queueStarted, setQueueStarted] = useState(false);
   const [gameOverWin, setGameOverWin] = useState(false);
   const [gameOverLoss, setGameOverLoss] = useState(false);
